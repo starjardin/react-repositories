@@ -1,5 +1,5 @@
 {
-  "name": "my-app",
+  "name": "react-repository",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -12,6 +12,7 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "@types/styled-components": "^5.1.25",
+    "antd": "^4.20.7",
     "graphql": "^16.5.0",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
