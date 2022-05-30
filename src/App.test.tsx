@@ -81,4 +81,30 @@ describe("Github app tests", () => {
       expect(screen.getByText("Description")).toBeInTheDocument();
     });
   });
+
+  test("renders has next page disabled", async () => {
+    render(
+      <MockedProvider mocks={mocks(false)}>
+        <App />
+      </MockedProvider>
+    );
+
+    await waitFor(() => {
+      const button = screen.getByText("Next");
+      expect(button).toHaveAttribute("disabled");
+    });
+  });
+
+  test("renders has back page disabled", async () => {
+    render(
+      <MockedProvider mocks={mocks(true, false)}>
+        <App />
+      </MockedProvider>
+    );
+
+    await waitFor(() => {
+      const button = screen.getByText("Back");
+      expect(button).toHaveAttribute("disabled");
+    });
+  });
 });
