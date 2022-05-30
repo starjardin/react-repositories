@@ -66,4 +66,19 @@ describe("Github app tests", () => {
     );
     expect(screen.getByText("Loading..."));
   });
+
+  test("renders projects list", async () => {
+    render(
+      <MockedProvider mocks={mocks()}>
+        <App />
+      </MockedProvider>
+    );
+
+    await waitFor(() => {
+      expect(screen.getByText("Name")).toBeInTheDocument();
+      expect(screen.getByText("Stars")).toBeInTheDocument();
+      expect(screen.getByText("Forks")).toBeInTheDocument();
+      expect(screen.getByText("Description")).toBeInTheDocument();
+    });
+  });
 });
